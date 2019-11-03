@@ -2,6 +2,7 @@ package gr5.walasz.morsetranslator.model;
 
 import gr5.walasz.morsetranslator.controller.TranslationMode;
 import gr5.walasz.morsetranslator.model.data.*;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,9 +40,15 @@ public class TranslatorModel {
     private String translatedText;
     
     /**
+     * Type-safe collection.
+     */
+    @SuppressWarnings("unused")
+    private List<String> typeSafeCollection;
+    
+    /**
      * Validator checking morse text corectness, implements interface
      */
-    private TextValidator validator;
+    private final TextValidator validator;
     
     /**
      * Contructor that initializes instances of private members.
@@ -53,7 +60,7 @@ public class TranslatorModel {
         signs = new Signs();
         
         validator = ((text) -> {
-            Pattern pattern = Pattern.compile("[\\.\\-\\s\\\"]+");
+            Pattern pattern = Pattern.compile("[\\.\\-\\s\\\"]*");
             Matcher matcher = pattern.matcher(text);
 
             if (!matcher.matches())
