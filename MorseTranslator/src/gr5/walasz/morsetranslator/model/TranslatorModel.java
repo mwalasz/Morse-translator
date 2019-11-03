@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  * Class that handles app logic and thus translate normal text to Morse and vice versa.
  * 
  * @author Mateusz Walasz
- * @version 1.0.0
+ * @version 1.1.0
  */
 public class TranslatorModel {
     
@@ -39,6 +39,11 @@ public class TranslatorModel {
     private String translatedText;
     
     /**
+     * Validator checking morse text corectness, implements interface
+     */
+    private TextValidator validator;
+    
+    /**
      * Contructor that initializes instances of private members.
      */
     public TranslatorModel()
@@ -46,6 +51,14 @@ public class TranslatorModel {
         letters = new Letters();
         numbers = new Digits();
         signs = new Signs();
+        
+        validator = ((text) -> {
+            Pattern pattern = Pattern.compile("[\\.\\-\\s\\\"]+");
+            Matcher matcher = pattern.matcher(text);
+
+            if (!matcher.matches())
+                throw new DetectedWrongCharacterInMorseTextException();
+        });
     }
     
     /**
@@ -82,7 +95,7 @@ public class TranslatorModel {
         switch(translationMode){
             case MORSE_TO_NORMAL:
                 try {
-                    validateMorseText();
+                    validator.validate(text);
                     convertMorseToText();
                 } catch (DetectedWrongCharacterInMorseTextException e) {
                     throw e;
@@ -168,21 +181,5 @@ public class TranslatorModel {
      */
     private void addSpaceToText(){
          translatedText += " ";
-    }
-    
-    /**
-     * Method that checks if morse text contains forbidden characters
-     * 
-     * @throws DetectedWrongCharacterInMorseTextException exception thrown when forbidden characters are detected
-     */
-    private void validateMorseText() throws DetectedWrongCharacterInMorseTextException {
-        /**
-         * Regex pattern that allows only string that has at least one of these characters: '.', '-', ' '.
-         */
-        Pattern pattern = Pattern.compile("[\\.\\-\\s\\\"]+");
-        Matcher matcher = pattern.matcher(textToTranslate);
-        
-        if (!matcher.matches())
-            throw new DetectedWrongCharacterInMorseTextException();
     }
 }
