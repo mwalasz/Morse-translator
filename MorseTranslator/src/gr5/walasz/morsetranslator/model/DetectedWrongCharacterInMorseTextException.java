@@ -1,4 +1,4 @@
-package gr5.walasz.morsetranslator.exceptions;
+package gr5.walasz.morsetranslator.model;
 
 /**
  * Exception informing about situation when Morse text contains forbidden characters.

@@ -7,7 +7,7 @@ import gr5.walasz.morsetranslator.controller.TranslationMode;
  * Displays necessary information to console.
  * 
  * @author Mateusz Walasz
- * @version 1.0.0
+ * @version 1.0.1
  */
 public final class TranslatorView {
 
@@ -54,6 +54,20 @@ public final class TranslatorView {
      */
     public final static void displayExceptionDescription(Exception e) {
         System.out.println(e.getMessage());
+    }
+    
+    /**
+     * Method that prompts user to enter translation mode.
+     */
+    public static void askForTranslationMode(){
+        System.out.print("Wpisz m|M w celu przetłumaczenia tekstu z alfabetu Morse'a, \nlub n|N w celu przetłumaczenia normalnego tekstu: ");
+    }
+    
+    /**
+     * Method that prompts user to enter text to translate.
+     */
+    public static void askForText(){
+        System.out.println("Podaj tekst do przetłumaczenia: ");
     }
     
     /**

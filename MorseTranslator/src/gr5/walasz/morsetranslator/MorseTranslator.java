@@ -1,7 +1,7 @@
 package gr5.walasz.morsetranslator;
 
 import gr5.walasz.morsetranslator.controller.TranslatorController;
-import gr5.walasz.morsetranslator.exceptions.DetectedWrongCharacterInMorseTextException;
+import gr5.walasz.morsetranslator.model.DetectedWrongCharacterInMorseTextException;
 import gr5.walasz.morsetranslator.exceptions.InvalidInitParamsException;
 import gr5.walasz.morsetranslator.model.TranslatorModel;
 import gr5.walasz.morsetranslator.view.TranslatorView;

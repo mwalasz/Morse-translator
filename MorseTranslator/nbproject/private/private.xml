@@ -3,16 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Studia/przedmioty/semestr%205/JIUM/lab/MorseTranslator/src/gr5/walasz/morsetranslator/model/TranslatorModel.java</file>
-            <file>file:/D:/Studia/przedmioty/semestr%205/JIUM/lab/MorseTranslator/src/gr5/walasz/morsetranslator/MorseTranslator.java</file>
-            <file>file:/D:/Studia/przedmioty/semestr%205/JIUM/lab/MorseTranslator/src/gr5/walasz/morsetranslator/model/data/Digits.java</file>
-            <file>file:/D:/Studia/przedmioty/semestr%205/JIUM/lab/MorseTranslator/src/gr5/walasz/morsetranslator/model/data/Letters.java</file>
-            <file>file:/D:/Studia/przedmioty/semestr%205/JIUM/lab/MorseTranslator/src/gr5/walasz/morsetranslator/controller/TranslatorController.java</file>
-            <file>file:/D:/Studia/przedmioty/semestr%205/JIUM/lab/MorseTranslator/src/gr5/walasz/morsetranslator/view/TranslatorView.java</file>
-            <file>file:/D:/Studia/przedmioty/semestr%205/JIUM/lab/MorseTranslator/src/gr5/walasz/morsetranslator/exceptions/InvalidInitParamsException.java</file>
-            <file>file:/D:/Studia/przedmioty/semestr%205/JIUM/lab/MorseTranslator/src/gr5/walasz/morsetranslator/controller/TranslationMode.java</file>
-            <file>file:/D:/Studia/przedmioty/semestr%205/JIUM/lab/MorseTranslator/src/gr5/walasz/morsetranslator/model/data/Signs.java</file>
-            <file>file:/D:/Studia/przedmioty/semestr%205/JIUM/lab/MorseTranslator/src/gr5/walasz/morsetranslator/exceptions/DetectedWrongCharacterInMorseTextException.java</file>
+            <file>file:/D:/Studia/programowanie/Morse-translator/MorseTranslator/src/gr5/walasz/morsetranslator/controller/TranslatorController.java</file>
+            <file>file:/D:/Studia/programowanie/Morse-translator/MorseTranslator/src/gr5/walasz/morsetranslator/model/TranslatorModel.java</file>
+            <file>file:/D:/Studia/programowanie/Morse-translator/MorseTranslator/src/gr5/walasz/morsetranslator/model/data/Letters.java</file>
+            <file>file:/D:/Studia/programowanie/Morse-translator/MorseTranslator/src/gr5/walasz/morsetranslator/exceptions/DetectedWrongCharacterInMorseTextException.java</file>
+            <file>file:/D:/Studia/programowanie/Morse-translator/MorseTranslator/src/gr5/walasz/morsetranslator/view/TranslatorView.java</file>
+            <file>file:/D:/Studia/programowanie/Morse-translator/MorseTranslator/src/gr5/walasz/morsetranslator/controller/TranslationMode.java</file>
+            <file>file:/D:/Studia/programowanie/Morse-translator/MorseTranslator/src/gr5/walasz/morsetranslator/MorseTranslator.java</file>
+            <file>file:/D:/Studia/programowanie/Morse-translator/MorseTranslator/src/gr5/walasz/morsetranslator/model/data/Digits.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,7 +1,6 @@
 package gr5.walasz.morsetranslator.model;
 
 import gr5.walasz.morsetranslator.controller.TranslationMode;
-import gr5.walasz.morsetranslator.exceptions.DetectedWrongCharacterInMorseTextException;
 import gr5.walasz.morsetranslator.model.data.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

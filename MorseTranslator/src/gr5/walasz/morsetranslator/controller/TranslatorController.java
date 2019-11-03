@@ -2,12 +2,13 @@ package gr5.walasz.morsetranslator.controller;
 
 import gr5.walasz.morsetranslator.exceptions.InvalidInitParamsException;
 import gr5.walasz.morsetranslator.view.TranslatorView;
+import java.util.Scanner;
 
 /**
  * Class that takes data from the user at the start of the application.
  * 
  * @author Mateusz Walasz
- * @version 1.0.0
+ * @version 1.0.1
  */
 public class TranslatorController {
     
@@ -31,6 +32,9 @@ public class TranslatorController {
         if (args.length == 2){
             setOperation(args[0]);
             this.textToTranslate = args[1];
+        }
+        else if (args.length == 0){
+            getUserInput();
         }
         else {
             throw new InvalidInitParamsException();
@@ -78,12 +82,31 @@ public class TranslatorController {
      * @throws InvalidInitParamsException exception thrown when flag is not recognised
      */
     private void setOperation(String flag) throws InvalidInitParamsException {
-        if ("-m".equals(flag)){
+        if ("-m".equalsIgnoreCase(flag)){
             this.translationMode = TranslationMode.MORSE_TO_NORMAL;
         }
-        else if ("-n".equals(flag)){
+        else if ("-n".equalsIgnoreCase(flag)){
             this.translationMode = TranslationMode.NORMAL_TO_MORSE;
         }
         else throw new InvalidInitParamsException();
+    }
+    
+    /**
+     * Method that handles user input of parameters
+     */
+    private void getUserInput() throws InvalidInitParamsException{
+        Scanner in = new Scanner(System.in);
+        
+        TranslatorView.askForTranslationMode();
+        String mode = in.nextLine();
+        
+        setOperation("-" + mode);
+        
+        TranslatorView.askForText();
+        String text = in.nextLine();
+        
+        if (text.isEmpty())
+            throw new InvalidInitParamsException();
+        else this.textToTranslate = text;
     }
 }
