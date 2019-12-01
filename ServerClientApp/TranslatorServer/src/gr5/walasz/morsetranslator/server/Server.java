@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gr5.walasz.morsetranslator.server;
 
 import gr5.walasz.morsetranslator.controller.ServerController;
@@ -14,17 +9,30 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- *
+ * Server class responsible for connecting and communicating with client's application. 
+ * 
  * @author Mateusz Walasz
+ * @version 1.2.0
  */
 public class Server implements Closeable {
+    
+    /**
+     * Field representing the socket waiting for client connections
+     */
     private ServerSocket serverSocket;
+    
+    /**
+     * Application properties that read from file server's port.
+     */
     private final AppProperties properties;
     
     public Server() throws IOException {
         properties = new AppProperties();
     }
     
+    /**
+     * Method to start server.
+     */
     public void start() {
         try {
             serverSocket = new ServerSocket(properties.getPort());
@@ -34,10 +42,21 @@ public class Server implements Closeable {
         }
     }
     
+    /**
+     * Accepts server socket.
+     * 
+     * @return socket for server
+     * @throws IOException 
+     */
     public Socket acceptServerSocket() throws IOException{
         return this.serverSocket.accept();
     }
     
+    /**
+     * Implementation of closing connection through a socket.
+     * 
+     * @throws IOException
+     */
     @Override
     public void close() throws IOException {
         if (serverSocket != null) {

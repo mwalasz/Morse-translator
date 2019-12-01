@@ -1,16 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 import gr5.walasz.morsetranslator.controller.ServerController;
-import gr5.walasz.morsetranslator.server.Server;
 
 /**
- *
- * @author Mateusz
+ * Main class of the project. Starts server controller.
+ * 
+ * @author Mateusz Walasz
+ * @version 1.2.0
  */
 public class TranslatorServer {
     

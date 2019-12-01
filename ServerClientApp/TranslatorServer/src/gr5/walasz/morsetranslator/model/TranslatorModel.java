@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  * Class that handles app logic and thus translate normal text to Morse and vice versa.
  * 
  * @author Mateusz Walasz
- * @version 1.1.0
+ * @version 1.2.0
  */
 public class TranslatorModel {
     
@@ -73,11 +73,14 @@ public class TranslatorModel {
      * 
      * @param textToSet text to translate
      */
-    public void setTextToTranslateAndResetTranslatedText(String textToSet){
+    public void setTextToTranslateAndResetTranslatedText(String textToSet) throws NullTextException{
         this.translatedText = "";
         
         this.textToTranslate = "";
-        this.textToTranslate = textToSet.toLowerCase();
+        
+        if (textToSet != null)
+            this.textToTranslate = textToSet.toLowerCase();
+        else throw new NullTextException();
     }
 
     /**
@@ -96,8 +99,12 @@ public class TranslatorModel {
      * @param translationMode mode of translation
      * @throws DetectedWrongCharacterInMorseTextException exception thrown when morse text to translate contains forbidden characters
      */
-    public void translate(String text, TranslationMode translationMode) throws DetectedWrongCharacterInMorseTextException{
-        setTextToTranslateAndResetTranslatedText(text);
+    public void translate(String text, TranslationMode translationMode) throws DetectedWrongCharacterInMorseTextException, NullTextException{
+        try {
+            setTextToTranslateAndResetTranslatedText(text);
+        } catch (NullTextException e) {
+            throw e;
+        }
         
         switch(translationMode){
             case MORSE_TO_NORMAL:

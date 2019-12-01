@@ -4,7 +4,7 @@ package gr5.walasz.morsetranslator.model;
  * Exception informing about situation when Morse text contains forbidden characters.
  * 
  * @author Mateusz Walasz
- * @version 1.3.0
+ * @version 1.1.1
  */
 public class DetectedWrongCharacterInMorseTextException extends Exception {
     
