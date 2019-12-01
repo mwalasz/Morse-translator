@@ -94,13 +94,13 @@ public class ServerController {
      */
     private void executeTranslation(String toTranslate){
         try {
-            service.sendMessageToClient("\nText to translate saved.");
+            service.sendMessageToClient("Text to translate saved.");
             
             service.sendMessageToClient("Processing ...");
             translator.translate(toTranslate, translationMode);
             service.sendMessageToClient("Text successfully processed.");
             
-            service.sendMessageToClient("\nTranslated text: " + translator.getTranslatedText());
+            service.sendMessageToClient("Translated text: " + translator.getTranslatedText());
 
         } catch (Exception e) {
             service.sendMessageToClient("Unable to translate text, because of: " + e.getMessage());
@@ -114,7 +114,7 @@ public class ServerController {
      * @throws IOException 
      */
     private boolean getTranslationMode() throws IOException{
-        service.sendMessageToClient("\nSelect translation mode:");
+        service.sendMessageToClient("Select translation mode:");
         String userInput = service.getClientInput();
         
         if (userInput.equalsIgnoreCase("-m")){
@@ -143,7 +143,7 @@ public class ServerController {
      * @throws IOException 
      */
     private String getTextForTranslation() throws IOException{
-        service.sendMessageToClient("\nEnter text to translate: ");
+        service.sendMessageToClient("Enter text to translate: ");
         
         return service.getClientInput();
     }
@@ -155,13 +155,14 @@ public class ServerController {
      * @throws IOException 
      */
     private boolean getStartInfo() throws IOException{
-        service.sendMessageToClient("\nTo start enter 'start', to show help enter 'help', to quit enter 'quit':");
+        service.sendMessageToClient("To start enter 'start', to show help enter 'help', to quit enter 'quit':");
         String str = service.getClientInput();
         
         if (str.contains(""))
             str = str.substring(str.lastIndexOf("") + 1);
         
         if (str.equalsIgnoreCase("start")){
+            service.sendMessageToClient("Started process.");
             return true;
         }
         else {
@@ -182,15 +183,14 @@ public class ServerController {
      * Sends info to the client about app usage.
      */
     private void sendHelp(){
-        service.sendMessageToClient("\nHelp info:");
-        service.sendMessageToClient("    start -> -m (from morse to normal) or -n (from normal to morse) -> 'text to translate'");
+        service.sendMessageToClient("Help:  start -> -m (from morse to normal) or -n (from normal to morse) -> 'text to translate'");
     }
     
     /**
      * Sends info to the client if wrong data was passed to server.
      */
     private void sendInfoAboutWrongInput(){
-        service.sendMessageToClient("\nWrong input. Type in \"HELP\" to get info about usage.");
+        service.sendMessageToClient("Wrong input. Type in \"HELP\" to get info about usage.");
     }
     
     private void handleHelpAndQuit(String input){

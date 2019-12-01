@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
  * Tests for public metods of TranslatorModel class
  * 
  * @author Mateusz Walasz
- * @version 1.3.0
+ * @version 1.2.0
  */
 public class TranslatorModelTest {
     
